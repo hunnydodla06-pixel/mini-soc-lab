@@ -64,4 +64,57 @@ This project is a hands-on SOC lab for learning security monitoring, log analysi
 - [ ] Windows endpoint connected to Wazuh - YET TO COMPLETE
 
 
+## Day 2 - Wazuh Installation and Dashboard Setup
+
+### Objective
+
+The objective for day 2 was to install wazuh as the central security monitoring platform for my SOC lab, today my main goal was to successfully install and access the dashboard.
+
+### What I did
+
+- updated the Ubuntu environment
+- Installed the tool curl into Ubuntu so that it could communicate with websites and servers
+-  Downloaded the Wazuh installation assistant
+-  Installed Wazuh using an all-in-one deployment including Wazuh Manager, Wazuh Indexer and Wazuh Dashboard
+-  Configured the Wazuh Manager, Indexer and Dashboard
+-  After Installation using the Web Address given to me by Wazuh I accessed the Wazuh Dashboard through Firefox
+-  Encountered a certificate trust issues where Wazuh created its own certificate for its Dashboard
+-  Successfully configured Firefox to trust the Wazuh Root Certificate Authority
+
+### Troubleshooting: Wazuh Dashboard Certificate 
+when I first attempted to access the Wazuh Dashboard, Firefox displayed the error:
+
+'SEC_ERROR_UNKNOWN_ISSUER'
+
+Firefox did not trust the certificate being used by the Wazuh Dashboard
+
+I then decided to take a closer look at the certificate and later confirmed that the certificate was issued by Wazuh itself and was associated with the Wazuh dashboard.
+
+I then located the Wazuh Root CA certificate:
+
+'/etc/wazuh-dashboard/certs/root-ca.pem'
+
+I then copied the certificate to my Ubuntu home directory and imported it into Firefox'
+
+I selected:
+
+**Trust this CA to identify websites**
+
+After reloading the Wazuh Dashboard, Firefox trusted the certificate and the dashboard opened successfully.
+
+### What I Learned 
+
+This process of troubleshooting helped me understand how HTTPS certificates and Certificate Authorities work. I also gained experience in identifying certificate trust problems, investigating its cause and implementing a solution to fix the problem.
+
+### Day 2 Status
+
+- [x] Wazuh installed
+- [x] wazuh Dashboard configured
+- [x] Certificate issue investigated
+- [x] Certificate trust issue resolved
+- [x] Dashboard successfully accessed
+
+
+
+
 
