@@ -26,6 +26,17 @@ I checked the IP addresses of my virtual machines and then used the 'ping' comma
 
 The test was successful, which meant that both the virtual machines could communicate over the network.
 
-### 3. Installed the wazuh Agent
+### 3. Installed the Wazuh Agent
+
+I downloaded and then installed the Wazuh Windows agent package compatible with my windows 11 endpoint. I configured the agent to communicate with the Wazuh Manager on Ubuntu and made the agents name **WIN-SOC-ENDPOINT**. This will allow the agent to collect configured endpoint information and send it back to the Wazuh server on ubuntu to be analyzed.
+
+### 4. Troubleshooting - Agent initially Not Active 
+
+After installing Wazuh I checked the Wazuh Dashboard and the Windows agent was not showing up as active.
+
+To investigate, I:
+
+- Rechecked network connectivity between Windows and Ubuntu.
+- Reviewed the Wazuh agent logs for connection-related errors.
 
 
