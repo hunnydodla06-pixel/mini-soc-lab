@@ -15,4 +15,17 @@ This allows Wazuh to monitor security activity on Windows.
 | Agent Name | WIN-SOC-ENDPOINT |
 | Connection Status | Active |
 
+## What I Did 
+
+### 1. Checked Windows 11
+I firstly started my windows 11 virtual machine and confirmed that it was running correctly and there were no obvious system errors present.
+
+### 2. Tested Network Connectivity
+
+I checked the IP addresses of my virtual machines and then used the 'ping' command to test whether the connection was successful between Windows and Ubuntu. 
+
+The test was successful, which meant that both the virtual machines could communicate over the network.
+
+### 3. Installed the wazuh Agent
+
 
