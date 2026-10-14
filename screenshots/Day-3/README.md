@@ -42,4 +42,22 @@ To investigate, I:
 
 After these checks, I checked the dashboard again and then confirmed that the agent was active. However I cannot confirm the initial cause of the initial connection issue.
 
+### What I Learned 
+
+- How to connect the windows endpoint to a Wazuh Manager.
+- How to check IP addresses on Windows and Linux
+- How to use 'ping' to test network connectivity
+- How to check whether the Wazuh agent service is running
+- How to check logs to spot any connection issues
+- learned that running a service is a different check to an active check
+
+### Day 3 status
+
+- [x] Windows and Ubuntu IP addresses checked
+- [x] tested Network connectivity
+- [x] Wazuh agent installed and configured
+- [x] WazuhSvc confirmed running
+- [x] Initial connection issue investigated (issue not discovered)
+- [x] WIN-SOC-ENPOINT confirmed active in the dashboard
+      
 
