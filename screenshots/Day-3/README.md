@@ -38,5 +38,8 @@ To investigate, I:
 
 - Rechecked network connectivity between Windows and Ubuntu.
 - Reviewed the Wazuh agent logs for connection-related errors.
+- Checked the Windows Wazuh agent service ('WazuhSvc') and confirmed that it was running.
+
+After these checks, I checked the dashboard again and then confirmed that the agent was active. However I cannot confirm the initial cause of the initial connection issue.
 
 
