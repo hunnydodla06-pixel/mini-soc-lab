@@ -46,7 +46,19 @@ I ran an 'echo' command that displayed the text MINI-SOC-DAY4-TEST.when I ran th
 
 I searched for MINI-SOC-DAY4-TEST in Wazuh's Threat Hunting section and opened the matching event. I checked that it showed the command I ran and my Windows agent, WIN-SOC-ENDPOINT. I also found that the event came from Sysmon and had Event ID 1, meaning a program had started. This confirmed that Sysmon was recording activity on my Windows VM and that Wazuh was receiving those logs.
 
+### What I Learned
 
+- How Sysmon records activity on Windows.
+- How Event viewer displays the records stored on the windows machine.
+- How to configure the wazuh agent to collect Sysmon logs.
+- why backing up config files is useful before making changes and good incase anything is lost.
+- How to use error logs to investigate a service problem
+- How to verify that any actions performed on windows appear in Wazuh
+
+
+#### Day 4 Outcome
+
+I successfully connected Sysmon's logging to wazuh and verified that a test I performed reached the dashboard. I also fixed a configuration typo that stopped the agent from running.
 
 
 
