@@ -14,6 +14,8 @@ I opened the Wazuh dashboard and confirmed that WIN-SOC-ENDPOINT showed as activ
 
 I downloaded Sysmon64a.exe from Microsoft's official Sysinternals page as that is the version that needs to be downloaded for my Windows ARM64 Virtual machine and then I extracted it. I then in administrator PowerShell navigated to the extracted folder and installed Sysmon:
 
-'''powershell .\Sysmon64a.exe -I'''
+powershell .\Sysmon64a.exe -i
+
+
 
 
