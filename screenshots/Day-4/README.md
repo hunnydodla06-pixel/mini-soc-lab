@@ -30,6 +30,26 @@ Before I began editing the agent configuration, I created a backup so that the o
 
 I edited the Wazuh agent configuration file, ossec.conf, to tell the agent where to find Sysmon's logs on Windows. This allowed the agent to collect the activity recorded by Sysmon and then send it to Wazuh server for further analysis. After saving the changes, I attempted to restart the agent so that the updated settings could load.
 
+#### 6. Investigated the Wazuh Agent Issue
+
+After I updated the configuration, I found that the Wazuh agent would not stay running. I checked the service status and reviewed the agent logs. I then looked for any error messages to help identify what was preventing the agent from running. I realized that the issue was a typo in the configuration file from when I edited it. I had accidentally typed "eventvhannel" instead of "event channel" which wazuh could not interpret correctly. I then corrected the spelling and saved the new file.
+
+#### 7. Confirmed Agent was Working Again
+
+I then started the Wazuh agent again and made sure that its service stayed running. I also checked the Wazuh dashboard, where WIN-SOC-ENDPOINT showed as Active. This confirmed that the agent was communicating with the server again.
+
+#### 8. Ran a Test Command
+
+I ran an 'echo' command that displayed the text MINI-SOC-DAY4-TEST.when I ran this command it started a process that Sysmon could record. The unique text made the activity very easy to find in Wazuh.
+
+#### 9. Verified the Test Event in Wazuh
+
+I searched for MINI-SOC-DAY4-TEST in Wazuh's Threat Hunting section and opened the matching event. I checked that it showed the command I ran and my Windows agent, WIN-SOC-ENDPOINT. I also found that the event came from Sysmon and had Event ID 1, meaning a program had started. This confirmed that Sysmon was recording activity on my Windows VM and that Wazuh was receiving those logs.
+
+
+
+
+
 
 
 
