@@ -16,6 +16,21 @@ I downloaded Sysmon64a.exe from Microsoft's official Sysinternals page as that i
 
 powershell .\Sysmon64a.exe -i
 
+I also learned that folder paths containing spaces need quotation marks so PowerShell treats the whole path as one address.
+
+#### 3. checked Sysmon was recording locally
+
+I opened Event Viewer on my windows virtual machine to check that Sysmon was recording all the activity on Windows. I then found Event ID 1, which is a Sysmon entry that showed me that Sysmon was generating logs locally before I configured Wazuh to collect them.
+
+#### 4. Backed up the Wazuh Configuration
+
+Before I began editing the agent configuration, I created a backup so that the original configuration is preserved so it could be restored if needed.
+
+#### 5. Configured Sysmon Log Collection
+
+I edited the Wazuh agent configuration file, ossec.conf, to tell the agent where to find Sysmon's logs on Windows. This allowed the agent to collect the activity recorded by Sysmon and then send it to Wazuh server for further analysis. After saving the changes, I attempted to restart the agent so that the updated settings could load.
+
+
 
 
 
